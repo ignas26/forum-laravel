@@ -43,9 +43,10 @@ class ChannelsController extends Controller
         ]);
         
         
-        Channel::create([
-            'title' => $request->channel
-        ]);
+
+        $channel = new Channel;
+        $channel->title = $request->input('title');
+        $channel->save();
         
         $request->session()->flash('message', 'Kanalas sukurtas');
        return redirect(route('channels.index'));

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Discussion extends Model
+class Conversation extends Model
 {
     protected $fillable = ['title', 'content', 'user_id', 'channel_id'];
     

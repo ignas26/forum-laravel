@@ -12,7 +12,13 @@
                         </div>
                     @endif
                    <form action="{{ route('convstore') }}" method="post">
-                   @csrf  
+                   @csrf
+                   
+                     <div class="form-group">
+                    <label for="Title">Temos pavadinimas:</label>     
+                     <input type="text" name="title" class="form-control">
+                        </div>
+                         
                    <div class="form-group">
                       <label for="channel">pasirinkite jus dominančią programavimo sritį/kalbą:</label>
                       

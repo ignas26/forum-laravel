@@ -17,13 +17,31 @@ class ConversationsController extends Controller
     
     
     
-     public function store()
+     public function store(Request $request)
     {
-//
-    }
+
+         
+         $this->validate($request, [
+        
+         'title' => 'required',
+         'channel_id' => 'required',
+         'content' => 'required'
+        
+         
+         ]);
+
+    $conversation = new Conversation;
+    $conversation->title = $request->input('title');
+    $conversation->content = $request->input('content');
+    $conversation->channel_id = $request->input('channel_id');
+    $conversation->user_id = Auth::id();
+    $conversation->save();
+          
+    $request->session()->flash('message', 'Klausimas nusiųstas');    
+    return redirect(route('home'));
+     }
     
-    
-    
+
     
     
     
