@@ -31,13 +31,31 @@ class AnswersTableSeeder extends Seeder
         
               $answer3 = [
             'content' => 'this medium',
-            'conversation_id' => 2,
-            'user_id' => 1
+            'conversation_id' => 3,
+            'user_id' => 2
 
         ];
+        
+        $answer4 = [
+            'content' => 'this easy',
+            'conversation_id' => 4,
+            'user_id' => 4
+
+        ];
+        
+        $answer5 = [
+            'content' => 'this very easy',
+            'conversation_id' => 1,
+            'user_id' => 3
+
+        ];
+        
+        
         
         Answer::create($answer1);
         Answer::create($answer2);
         Answer::create($answer3);
+        Answer::create($answer4);
+        Answer::create($answer5);
     }
 }

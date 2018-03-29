@@ -100,7 +100,9 @@
         <ul class="list-group">
             @foreach ($channels as $channel)
             <li class="list-group-item-action mb-3">
-                {{ $channel->title }}
+                
+          <a href={{ route('home', ['id' => $channel->id]) }} class="list-group-item list-group-item-action" >{{ $channel->title }} <span class="badge badge-primary badge-pill left"> {{ $channel->discussions->count() }} </span></a>
+               
             </li>
             @endforeach
         </ul>

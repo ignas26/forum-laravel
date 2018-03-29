@@ -15,7 +15,10 @@ class ChannelsController extends Controller
      */
     public function index()
     {
-        return view('channels.index')->with('channels', Channel::all());
+        $channels = Channel::orderBy('id', 'asc')->get();
+        return view('channels.index', [
+        'channels' => $channels
+    ]);
     }
 
     /**

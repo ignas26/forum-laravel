@@ -39,3 +39,9 @@ Route::get('front/show/{id}', 'FrontsController@show')->name('view');
 
 Route::post('conversation/answer/{id}', 'ConversationsController@answer')->name('convanswer');
 
+Route::get('answer/like/{id}', 'AnswersController@like')->name('answlike');
+
+Route::get('answer/unlike/{id}', 'AnswersController@unlike')->name('answunlike');
+
+
+

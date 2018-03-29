@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 
 
 
@@ -24,7 +25,8 @@
 </div>
 
 <br><br><br>
-<b>ATSAKYMAI Į ŠĮ KLAUSIMĄ:</b> @foreach($conversations->answers as $answer)
+<b>ATSAKYMAI Į ŠĮ KLAUSIMĄ:</b> 
+@foreach($conversations->answers as $answer)
 <div class="card">
 
     <div class="card-header">
@@ -40,7 +42,11 @@
             {{ $answer->content }}
         </p>
         <div class="card-footer">
-            <p>LIKE</p>
+            @if($answer->gained_a_like())
+           <a href="{{ route('answunlike', ['id' => $answer->id ]) }}" class="btn btn-danger">duoti unlike</a>
+            @else
+            <a href="{{ route('answlike', ['id' => $answer->id ]) }}" class="btn btn-success">laik</a>
+            @endif
         </div>
     </div>
 

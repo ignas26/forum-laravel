@@ -9,7 +9,7 @@
     @endif
 </div>
 
-<!--                  
+        
 <!-- <img src="{{ asset('storage/avatar.jpg') }}" alt="" width="250px" height="250px">-->
 
 @foreach($conversations as $conversation)

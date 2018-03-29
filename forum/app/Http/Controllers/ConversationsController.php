@@ -51,17 +51,7 @@ class ConversationsController extends Controller
         $answ->conversation_id = $id;
         $answ->content = $request->input('answer');
         $answ->save();
-        
-//        $answ = Answer::create([
-//            
-//            'user_id' => Auth::id(),
-//            'conversation_id' => $id,
-//            'content' => request()->answer
-//        ]);
-        
-        
-    
-    
+
     $request->session()->flash('message', 'atsakymas pateiktas');
     return redirect()->back();
     }

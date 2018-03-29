@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
           'name' => 'admin',
           'password' => bcrypt('admin'),
           'email' => 'admin@admin.lt',
-          'avatar' => asset('storage/avatar2.jpg')
+          'avatar' => asset('avatars/avatar.jpg')
       ]);
              
         
@@ -26,6 +26,19 @@ class UsersTableSeeder extends Seeder
           'avatar' => asset('storage/avatar.jpg')
       ]);
     
+                DB::table('users')->insert([
+          'name' => 'Antanas',
+          'password' => bcrypt('pavardeniss'),
+          'email' => 'vardenis@pavardeniss.lt',
+          'avatar' => asset('storage/avatar2.jpg')
+      ]);
     
+                DB::table('users')->insert([
+          'name' => 'Alvydas',
+          'password' => bcrypt('pavardenisss'),
+          'email' => 'vardeniss@pavardenis.lt',
+          'avatar' => asset('avatars/avatar.jpg')
+      ]);
+        
     }
 }

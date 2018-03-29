@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Conversation;
+use Illuminate\Support\Facades\Auth;
+
 
 class Answer extends Model
 {
@@ -18,4 +20,32 @@ class Answer extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
+    public function likes()
+    {
+    
+        return $this->hasMany('App\Like');
+    }
+    
+    public function gained_a_like()
+    {
+        $id = Auth::id();
+        $likedBy = [];
+        
+      
+        foreach($this->likes as $like):
+        array_push($likedBy, $like->user_id);
+            
+        endforeach;
+        
+        
+        if(in_array($id, $likedBy))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+        
 }
