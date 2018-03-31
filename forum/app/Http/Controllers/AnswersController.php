@@ -23,9 +23,6 @@ public function like(Request $request, $id)
 }
     
 
-
-
-
 public function unlike(Request $request, $id)
 {
 
@@ -37,7 +34,10 @@ public function unlike(Request $request, $id)
 }
 
 
-
+ public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     
 }

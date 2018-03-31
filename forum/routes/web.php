@@ -43,5 +43,6 @@ Route::get('answer/like/{id}', 'AnswersController@like')->name('answlike');
 
 Route::get('answer/unlike/{id}', 'AnswersController@unlike')->name('answunlike');
 
+Route::get('filter/{rowcount}', 'FrontsController@filter')->name('filter');
 
 

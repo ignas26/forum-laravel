@@ -47,6 +47,7 @@ class ChannelsController extends Controller
         
         $channel = new Channel;
         $channel->title = $request->input('title');
+        $channel->slug = str_slug($request->input('slug'));
         $channel->save();
         
         $request->session()->flash('message', 'Kanalas sukurtas');
@@ -87,6 +88,7 @@ class ChannelsController extends Controller
     {
         $channel = Channel::find($id);
         $channel->title = $request->channel;
+        $channel->rowcount = str_slug($request->channel);
         $channel->save();
         $request->session()->flash('message', 'Pranešimas pakeistas');
         return redirect(route('channels.index'));

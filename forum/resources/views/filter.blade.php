@@ -20,7 +20,7 @@
 
         <img src="{{ $conversation->user->avatar }}" alt="" width="70px" height="70px">
         <span>{{ $conversation->user->name }} <br> {{ $conversation->created_at }} ({{ $conversation->created_at->diffForHumans() }}) </span>
-        <a href={{ route('view', ['id' => $conversation->id]) }} class="btn btn-info float-right">View</a>
+        <a href={{ route('view', ['id' => $conversation->id]) }} class="btn btn-secondary float-right">View</a>
     </div>
 
     <div class="card-body">
@@ -35,11 +35,9 @@
 
     <div class="card-footer">
 
-        <span>
+        <p>
             {{ $conversation->answers->count() }} Answer(s)
-        </span>
-<button class="btn btn-secondary float-right disabled">KANALAS: {{ $conversation->channel->title }}</button>
-
+        </p>
     </div>
 
 </div><br><br> @endforeach

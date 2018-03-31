@@ -43,9 +43,9 @@
         </p>
         <div class="card-footer">
             @if($answer->gained_a_like())
-           <a href="{{ route('answunlike', ['id' => $answer->id ]) }}" class="btn btn-danger">duoti unlike</a>
+           <a href="{{ route('answunlike', ['id' => $answer->id ]) }}" class="btn btn-danger text-lg-left font-weight-bold">nuimti like <br> <span class="badge"><img src="{{ asset('storage/like.png') }}" alt="" width="35px" height="35px">{{ $answer->likes->count()}}</span></a>
             @else
-            <a href="{{ route('answlike', ['id' => $answer->id ]) }}" class="btn btn-success">laik</a>
+            <a href="{{ route('answlike', ['id' => $answer->id ]) }}" class="btn btn-success text-lg-left font-weight-bold">duoti laik <br><span class="badge"> <img src="{{ asset('storage/like.png') }}" alt="" width="35px" height="35px">{{ $answer->likes->count()}}</span></a>
             @endif
         </div>
     </div>

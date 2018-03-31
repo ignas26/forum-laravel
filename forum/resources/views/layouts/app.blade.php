@@ -85,13 +85,24 @@
     <div class="row justify-content-center">
     http://localhost/backEnd/nd/projektas/forum/public/channels/create
 -->
+           <div class="card">
+           <div class="card-body">
+               <div class="list-group">
+                   <div class="list-group-item">
+                       <a href="{{ route('front') }}">Homepage</a>
+                   </div>
+               </div>
+           </div>
+           </div>
+           
+           
            
            <div class="container-fluid-inline">
            <div class="row mt-4">
 <a href="{{ route('convcreate') }}" class="form-control btn btn-primary"> kurkite naują pokalbį</a>
 <br>
 <div class="card">
-    <div class="panel-heading p-5 mb-3 text-light bg-primary rounded-circle"><p class="text-center text-uppercase"> Forumo kanalai </p>
+    <div class="card-header p-5 mb-3 text-light bg-primary rounded-circle"><p class="text-center text-uppercase"> Forumo kanalai </p>
     
     </div>
     
@@ -101,7 +112,7 @@
             @foreach ($channels as $channel)
             <li class="list-group-item-action mb-3">
                 
-          <a href={{ route('home', ['id' => $channel->id]) }} class="list-group-item list-group-item-action" >{{ $channel->title }} <span class="badge badge-primary badge-pill left"> {{ $channel->discussions->count() }} </span></a>
+          <a href={{ route('filter', ['rowcount' => $channel->id]) }} class="list-group-item list-group-item-action" >{{ $channel->title }} <span class="badge badge-primary badge-pill left"> {{ $channel->discussions->count() }} </span></a>
                
             </li>
             @endforeach
