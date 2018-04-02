@@ -12,17 +12,17 @@ class ConversationsTableSeeder extends Seeder
      */
     public function run()
     {
-        $line1 = 'Why is this not working???';
-        $line2 = 'Pls help???';
-        $line3 = 'Finally solved it';
-        $line4 = 'Done';
-        $line5 = 'Well done';
+        $line1 = 'Codinimo toolsai';
+        $line2 = 'BackEnd codinimo toolsai';
+        $line3 = 'Flexbox pūliuoja help pls';
+        $line4 = 'Restful API + Json encodinimo error';
+        $line5 = 'PDO login info';
         
         
         
         $converse1 = [
           'title' => $line1,
-            'content' => 'nobody said this was going to be easy and blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+            'content' => 'kokios yra geriausios FrontEnd codinimo priemonės, gal kas pasakytų? ar reikės spėlioti? Nes googlinantis matau dauuug variantų ir neaišku, kuris geriausias būtų. Atomas?',
             'channel_id' => 1,
             'user_id' => 2
 
@@ -30,7 +30,7 @@ class ConversationsTableSeeder extends Seeder
         
               $converse2 = [
           'title' => $line2,
-            'content' => 'nobody said this was going to be easy and blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+            'content' => 'Kaip su BackEnd codinimo priemonėmis? xamppo reikės vėl? kaip ten su serveriais išvis situacija? Ar toolsai tokie patys kaip ir Frontendo atveju ar reikia atsisiųsti naujus kažkokius?',
             'channel_id' => 2,
             'user_id' => 1
    
@@ -38,23 +38,23 @@ class ConversationsTableSeeder extends Seeder
         
               $converse3 = [
           'title' => $line3,
-            'content' => 'nobody said this was going to be easy and blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
-            'channel_id' => 2,
+            'content' => 'zmones as naujokas codinime tik 2 savaites, ko tai uzlinko flexbox ir iskraipe vaizda visa, visi elementai susoko vienas ant kito, nzn kaip debuginti, vienzo padekit kas galit!!! tik greiciau nes tuoj nd tikrins',
+            'channel_id' => 3,
             'user_id' => 1
 
         ];
         
          $converse4 = [
           'title' => $line4,
-            'content' => 'nobody said this was going to be easy and blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
-            'channel_id' => 2,
+            'content' => 'suluzo visas backendas kai paleidau kad encodintu i json formata, nzn ka daryti padekit. Aciu',
+            'channel_id' => 4,
             'user_id' => 1
         ];
         
                  $converse5 = [
           'title' => $line5,
-            'content' => 'nobody said this was going to be easy and blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
-            'channel_id' => 2,
+            'content' => 'tai pdo info visa is serverio ateina ar kaip cia yra? nesujungia manes ir neatvaizduoja nieko blemba.',
+            'channel_id' => 4,
             'user_id' => 1
         ];
         

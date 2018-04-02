@@ -13,15 +13,15 @@ class ChannelsTableSeeder extends Seeder
     public function run()
     {
         
-        $channel1 = ['title' => 'FrontEnd', 'rowcount' => str_slug('FrontEnd')];
-        $channel2 = ['title' => 'BackEnd', 'rowcount' => str_slug('BackEnd')];
-        $channel3 = ['title' => 'HTML', 'rowcount' => str_slug('HTML')];
-        $channel4 = ['title' => 'CSS', 'rowcount' => str_slug('CSS')];
-        $channel5 = ['title' => 'Javascript', 'rowcount' => str_slug('JavaScript')];
-        $channel6 = ['title' => 'JS Frameworks', 'rowcount' => str_slug('JS Frameworks')];
-        $channel7 = ['title' => 'PHP', 'rowcount' => str_slug('PHP')];
+        $channel1 = ['title' => 'FrontEnd bendras įvadas', 'rowcount' => str_slug('FrontEnd bendras įvadas')];
+        $channel2 = ['title' => 'BackEnd bendras įvadas', 'rowcount' => str_slug('BackEnd bendras įvadas')];
+        $channel3 = ['title' => 'HTML/CSS', 'rowcount' => str_slug('HTML/CSS')];
+        $channel4 = ['title' => 'PHP', 'rowcount' => str_slug('PHP')];
+        $channel5 = ['title' => 'PHP frameworks', 'rowcount' => str_slug('PHP frameworks')];
+        $channel6 = ['title' => 'Javascript', 'rowcount' => str_slug('Javascript')];
+        $channel7 = ['title' => 'JS Frameworks', 'rowcount' => str_slug('JS frameworks')];
         $channel8 = ['title' => 'Python', 'rowcount' => str_slug('Python')];
-        $channel9 = ['title' => 'PHP frameworks', 'rowcount' => str_slug('PHP frameworks')];
+        $channel9 = ['title' => 'Kitos kalbos', 'rowcount' => str_slug('Kitos kalbos')];
         
         Channel::create($channel1);
         Channel::create($channel2);

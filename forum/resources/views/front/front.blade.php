@@ -19,7 +19,9 @@
     <div class="card-header">
 
         <img src="{{ $conversation->user->avatar }}" alt="" width="70px" height="70px">
-        <span>{{ $conversation->user->name }} <br> {{ $conversation->created_at }} ({{ $conversation->created_at->diffForHumans() }}) </span>
+        <span> <h4> {{ $conversation->user->name }} </h4> <br> paskelbta {{ $conversation->created_at }} ({{ $conversation->created_at->diffForHumans() }}) 
+        <br> Vartotojo karmos taškai:({{ $conversation->user->karma }})
+        </span>
         <a href={{ route('view', ['id' => $conversation->id]) }} class="btn btn-info float-right">View</a>
     </div>
 
@@ -34,7 +36,14 @@
     </div>
 
     <div class="card-footer">
-
+<div class="card-body">
+       @forelse($conversation->attachments as $attachment)
+        <p><a href="{{ route('download_file', ['nr' => $attachment->id]) }}" >{{ $attachment->original_name }}</a> </p>
+    @empty
+      <p>No files...</p>
+@endforelse
+</div>
+       
         <span>
             {{ $conversation->answers->count() }} Answer(s)
         </span>

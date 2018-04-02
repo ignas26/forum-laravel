@@ -9,7 +9,9 @@
     <div class="card-header">
 
         <img src="{{ $conversations->user->avatar }}" alt="" width="70px" height="70px">
-        <span>{{ $conversations->user->name }} <br> {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})</span>
+        <span> <h4> {{ $conversations->user->name }} </h4> <br> paskelbta {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})
+         <br> Vartotojo karmos taškai:({{ $conversations->user->karma }})
+        </span>
 
     </div>
 
@@ -31,13 +33,12 @@
 
     <div class="card-header">
         <img src="{{ $answer->user->avatar }}" alt="" width="70px" height="70px">
-        <span>{{ $answer->user->name }} <br> {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})</span>
+        <span>{{ $answer->user->name }} <br> {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})
+        ({{ $answer->user->karma }})
+        </span>
     </div>
 
     <div class="card-body">
-        <h4 class="text-center">
-            <b> {{ $answer->content }} </b>
-        </h4>
         <p class="text-center">
             {{ $answer->content }}
         </p>
@@ -47,6 +48,7 @@
             @else
             <a href="{{ route('answlike', ['id' => $answer->id ]) }}" class="btn btn-success text-lg-left font-weight-bold">duoti laik <br><span class="badge"> <img src="{{ asset('storage/like.png') }}" alt="" width="35px" height="35px">{{ $answer->likes->count()}}</span></a>
             @endif
+
         </div>
     </div>
 

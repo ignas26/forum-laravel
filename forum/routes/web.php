@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/converse', function () {
-    return view('converse');
-});
+//Route::get('/converse', function () {
+//    return view('converse');
+//});
 
 Auth::routes();
 
@@ -45,4 +45,5 @@ Route::get('answer/unlike/{id}', 'AnswersController@unlike')->name('answunlike')
 
 Route::get('filter/{rowcount}', 'FrontsController@filter')->name('filter');
 
+Route::get('/download/attachment/{nr}', 'ConversationsController@downloadAttachment')->name('download_file');
 

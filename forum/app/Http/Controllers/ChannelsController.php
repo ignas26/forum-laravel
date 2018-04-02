@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Channel;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class ChannelsController extends Controller
 {
@@ -29,7 +30,7 @@ class ChannelsController extends Controller
     public function create(Request $request)
     {
 
-        $request->session()->flash('message', 'Kanalas sukurtas');
+
         return view('channels.create');
     }
 
@@ -41,17 +42,25 @@ class ChannelsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'channel' => 'required'
-        ]);
+        $messages = [
+          'title.required' => 'Jūs nieko neįrašėte!',
+      ];
+      $validator = Validator::make($request->all(), [
+          'title' => 'required|unique:conversations|max:255'
+      ], $messages);
+      if ($validator->fails()) {
+          return redirect(route('create'))
+                      ->withErrors($validator)
+                      ->withInput();
+      }
         
         $channel = new Channel;
         $channel->title = $request->input('title');
-        $channel->slug = str_slug($request->input('slug'));
+        $channel->rowcount = $request->input('title');
         $channel->save();
         
         $request->session()->flash('message', 'Kanalas sukurtas');
-       return redirect(route('channels.index'));
+        return redirect(route('front'));
     }
 
     /**
@@ -90,8 +99,8 @@ class ChannelsController extends Controller
         $channel->title = $request->channel;
         $channel->rowcount = str_slug($request->channel);
         $channel->save();
-        $request->session()->flash('message', 'Pranešimas pakeistas');
-        return redirect(route('channels.index'));
+        $request->session()->flash('message', 'Kanalo pavadinimas pakeistas');
+        return redirect(route('adm'));
     }
 
     /**
@@ -104,7 +113,7 @@ class ChannelsController extends Controller
     {
         Channel::destroy($id);
         $request->session()->flash('message', 'Kanalas pašalintas');
-       return redirect(route('channels.index'));
+        return redirect(route('adm'));
     }
         
     public function __construct()

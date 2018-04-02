@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <table class="table table-hover">
                       <thead>
-                          <th>Pranešimas</th>
+                          <th>Kanalas</th>
                           <th>Redaguoti</th>
                           <th>Pašalinti</th>
                       </thead>

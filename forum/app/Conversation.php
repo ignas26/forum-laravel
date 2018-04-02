@@ -26,4 +26,8 @@ class Conversation extends Model
         return $this->hasMany('App\Answer');
     }
     
+        public function attachments(){
+         return $this->hasMany('App\Attachment');
+     }
+    
 }

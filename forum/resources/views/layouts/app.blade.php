@@ -85,22 +85,35 @@
     <div class="row justify-content-center">
     http://localhost/backEnd/nd/projektas/forum/public/channels/create
 -->
-           <div class="card">
-           <div class="card-body">
+
+
+
+           <div class="card-body mt-1">
+              <blockquote class="blockquote text-center">
+               <a href="{{ route('front') }}"><button class="btn btn-light"> <h1 class="display-1 max-auto">LT overflow </h1> </button> </a>
+        </blockquote>
+         </div>
+          
+                  <div class="card-body">
+   
                <div class="list-group">
-                   <div class="list-group-item">
-                       <a href="{{ route('front') }}">Homepage</a>
-                   </div>
-               </div>
+ 
+                       <a href="{{ route('convcreate') }}" class="form-control btn btn-primary"> Reikia išspręsti programavimo problemą? Užpildykite šią formą ir mūsų ekspertai Jums pasistengs padėti</a>
+       </div>
+              
            </div>
-           </div>
-           
-           
-           
+               
+               @if(Session::has('message'))
+    <div class="alert alert-info">
+    <blockquote class="blockquote text-center">
+    <h1 class="max-auto">    {{ Session::get('message') }} </h1>
+    </blockquote>
+    </div>
+    @endif
+          
            <div class="container-fluid-inline">
            <div class="row mt-4">
-<a href="{{ route('convcreate') }}" class="form-control btn btn-primary"> kurkite naują pokalbį</a>
-<br>
+
 <div class="card">
     <div class="card-header p-5 mb-3 text-light bg-primary rounded-circle"><p class="text-center text-uppercase"> Forumo kanalai </p>
     
@@ -130,12 +143,6 @@
                </div>
     </div>
     </div>
-    
-    @if(Session::has('message'))
-    <div class="alert alert-info">
-        {{ Session::get('message') }}
-    </div>
-    @endif
 </body>
 
 </html>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChannelsTable extends Migration
+class CreateAttachmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateChannelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('channels', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('rowcount')->default(0);
-            $table->timestamps();
+        Schema::create('attachments', function (Blueprint $table) {
+        $table->increments('id');
+        $table->integer('conversation_id')->unsigned();
+        $table->string('path', 255);
+        $table->string('original_name', 255);
+        $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateChannelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('channels');
+        Schema::dropIfExists('attachments');
     }
 }
