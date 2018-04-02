@@ -90,7 +90,7 @@
 
            <div class="card-body mt-1">
               <blockquote class="blockquote text-center">
-               <a href="{{ route('front') }}"><button class="btn btn-light"> <h1 class="display-1 max-auto">LT overflow </h1> </button> </a>
+               <a href="{{ route('front') }}"><button class="btn btn-light"> <h1 class="display-1 max-auto">LT_overflow </h1> </button> </a>
         </blockquote>
          </div>
           
@@ -98,7 +98,7 @@
    
                <div class="list-group">
  
-                       <a href="{{ route('convcreate') }}" class="form-control btn btn-primary"> Reikia išspręsti programavimo problemą? Užpildykite šią formą ir mūsų ekspertai Jums pasistengs padėti</a>
+                       <a href="{{ route('convcreate') }}" class="form-control btn btn-info"> Reikia išspręsti programavimo problemą? Užpildykite šią formą ir mūsų ekspertai pasistengs Jums padėti</a>
        </div>
               
            </div>
@@ -115,17 +115,19 @@
            <div class="row mt-4">
 
 <div class="card">
-    <div class="card-header p-5 mb-3 text-light bg-primary rounded-circle"><p class="text-center text-uppercase"> Forumo kanalai </p>
+    <div class="card-header p-5 mb-3 text-light bg-dark rounded-circle"><p class="text-center text-uppercase"> Forumo kanalai </p>
     
     </div>
     
     <div class="card">
+
+
     <div class="card-body">
-        <ul class="list-group">
+        <ul class="list-group"> 
             @foreach ($channels as $channel)
             <li class="list-group-item-action mb-3">
                 
-          <a href={{ route('filter', ['rowcount' => $channel->id]) }} class="list-group-item list-group-item-action" >{{ $channel->title }} <span class="badge badge-primary badge-pill left"> {{ $channel->discussions->count() }} </span></a>
+          <a href={{ route('filter', ['rowcount' => $channel->id]) }} class="list-group-item list-group-item-action" >{{ $channel->title }} <span class="badge badge-info badge-pill left"> {{ $channel->discussions->count() }} </span></a>
                
             </li>
             @endforeach

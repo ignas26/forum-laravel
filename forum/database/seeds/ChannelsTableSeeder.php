@@ -13,8 +13,8 @@ class ChannelsTableSeeder extends Seeder
     public function run()
     {
         
-        $channel1 = ['title' => 'FrontEnd bendras įvadas', 'rowcount' => str_slug('FrontEnd bendras įvadas')];
-        $channel2 = ['title' => 'BackEnd bendras įvadas', 'rowcount' => str_slug('BackEnd bendras įvadas')];
+        $channel1 = ['title' => 'FrontEnd įvadas', 'rowcount' => str_slug('FrontEnd įvadas')];
+        $channel2 = ['title' => 'BackEnd įvadas', 'rowcount' => str_slug('BackEnd įvadas')];
         $channel3 = ['title' => 'HTML/CSS', 'rowcount' => str_slug('HTML/CSS')];
         $channel4 = ['title' => 'PHP', 'rowcount' => str_slug('PHP')];
         $channel5 = ['title' => 'PHP frameworks', 'rowcount' => str_slug('PHP frameworks')];

@@ -2,13 +2,10 @@
 @section('content')
 
 
-
-
+<div class="display-4"> LT_overflow/<span class="bg-info">{{ $conversations->channel->title }}</span></div><br>
 
 <div class="card">
-    <div class="card-header">
-
-        <img src="{{ $conversations->user->avatar }}" alt="" width="70px" height="70px">
+  <div class="card-header bg-dark text-white">
         <span> <h4> {{ $conversations->user->name }} </h4> <br> paskelbta {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})
          <br> Vartotojo karmos taškai:({{ $conversations->user->karma }})
         </span>
@@ -31,10 +28,9 @@
 @foreach($conversations->answers as $answer)
 <div class="card">
 
-    <div class="card-header">
-        <img src="{{ $answer->user->avatar }}" alt="" width="70px" height="70px">
+    <div class="card-header bg-dark text-white">
         <span>{{ $answer->user->name }} <br> {{ $conversations->created_at }} ({{ $conversations->created_at->diffForHumans() }})
-        ({{ $answer->user->karma }})
+         <br> Vartotojo karmos taškai:({{ $answer->user->karma }})
         </span>
     </div>
 
@@ -42,7 +38,7 @@
         <p class="text-center">
             {{ $answer->content }}
         </p>
-        <div class="card-footer">
+        <div class="card-footer bg-dark text-white">
             @if($answer->gained_a_like())
            <a href="{{ route('answunlike', ['id' => $answer->id ]) }}" class="btn btn-danger text-lg-left font-weight-bold">nuimti like <br> <span class="badge"><img src="{{ asset('storage/like.png') }}" alt="" width="35px" height="35px">{{ $answer->likes->count()}}</span></a>
             @else
@@ -52,7 +48,7 @@
         </div>
     </div>
 
-</div>
+</div><br><br>
 
 
 @endforeach

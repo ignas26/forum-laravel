@@ -11,7 +11,6 @@ class AnswersController extends Controller
 {
 public function like(Request $request, $id)
 {
-    //$answer = Answer::find($id);
     $like = new Like;
     $like->answer_id = $id;
     $like->user_id = Auth::id();

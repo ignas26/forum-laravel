@@ -9,18 +9,13 @@
     @endif
 </div>
 
-        
-<!-- <img src="{{ asset('storage/avatar.jpg') }}" alt="" width="250px" height="250px">-->
 
 @foreach($conversations as $conversation)
-
-
 <div class="card">
-    <div class="card-header">
-
-        <img src="{{ $conversation->user->avatar }}" alt="" width="70px" height="70px">
+    <div class="card-header bg-dark text-white">
         <span>{{ $conversation->user->name }} <br> {{ $conversation->created_at }} ({{ $conversation->created_at->diffForHumans() }}) </span>
         <a href={{ route('view', ['id' => $conversation->id]) }} class="btn btn-secondary float-right">View</a>
+        <br> Vartotojo karmos taškai:({{ $conversation->user->karma }})
     </div>
 
     <div class="card-body">
@@ -33,7 +28,7 @@
         </p>
     </div>
 
-    <div class="card-footer">
+    <div class="card-footer bg-dark text-white">
 
         <p>
             {{ $conversation->answers->count() }} Answer(s)
